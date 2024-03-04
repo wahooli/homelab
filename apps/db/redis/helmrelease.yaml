@@ -28,13 +28,13 @@ spec:
     diagnosticMode:
       enabled: false
     metrics:
-      enabled: true
+      enabled: false
       serviceMonitor:
         additionalLabels:
           app: redis
           release: kube-prometheus-stack
         jobLabel: redis-metrics
-        enabled: true
+        enabled: false
         namespace: db
     master:
       persistence:
