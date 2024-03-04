@@ -34,6 +34,7 @@ spec:
       enabled: false
     diagnosticMode:
       enabled: false
+    architecture: standalone
     metrics:
       enabled: false
       prometheusRule:
@@ -45,6 +46,7 @@ spec:
         jobLabel: postgresql-metrics
         enabled: false
         namespace: db
-    persistence:
-      enabled: true
-      existingClaim: db-postgresql-pvc
+    primary:
+      persistence:
+        enabled: true
+        existingClaim: db-postgresql-pvc
