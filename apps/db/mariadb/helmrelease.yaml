@@ -39,6 +39,8 @@ spec:
         enabled: false
         namespace: db
     primary:
+      readinessProbe:
+        enabled: false
       persistence:
         enabled: true
         existingClaim: db-mariadb-pvc
