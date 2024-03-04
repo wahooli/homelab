@@ -25,10 +25,6 @@ spec:
       backupTarget: s3://longhorn-backups@nasse/
       backupTargetCredentialSecret: minio-secret
       defaultDataPath: /var/lib/longhorn
-      storageMinimalAvailablePercentage: 10
-      createDefaultDiskLabeledNodes: true
-      defaultDataLocality: best-effort
-      storageOverProvisioningPercentage: 85
       taintToleration: "CriticalAddonsOnly=true:NoSchedule"
     longhornManager:
       tolerations:
