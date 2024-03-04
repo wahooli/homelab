@@ -44,9 +44,9 @@ spec:
         host: redis-master.db.svc.cluster.local
     prometheus:
       rules:
-        create: true
+        create: false
       serviceMonitor:
-        create: true
+        create: false
     ingress:
       enabled: true
       ingressClassName: nginx
@@ -63,16 +63,16 @@ spec:
             pathType: "Prefix"
       tls:
         - secretName: tls-authentik-ingress
-  postRenderers:
-  - kustomize:
-      patchesJson6902:
-      - target:
-          version: v1
-          kind: ServiceMonitor
-          name: authentik
-        patch:
-        - op: add
-          path: /metadata/labels
-          value:
-            name: authentik
-            release: kube-prometheus-stack
+  # postRenderers:
+  # - kustomize:
+  #     patchesJson6902:
+  #     - target:
+  #         version: v1
+  #         kind: ServiceMonitor
+  #         name: authentik
+  #       patch:
+  #       - op: add
+  #         path: /metadata/labels
+  #         value:
+  #           name: authentik
+  #           release: kube-prometheus-stack
