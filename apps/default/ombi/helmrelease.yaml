@@ -44,10 +44,9 @@ spec:
           configMap:
             name: ombi-database-json
       config:
-        enabled: false
-        # type: configMap
-        # name: ombi-database-json
-        # mountpath: /config/database.json
+        enabled: true
+        type: emptyDir
+        mountpath: /config
         # readOnly: false
     ingress:
       main:
@@ -57,11 +56,11 @@ spec:
         annotations: 
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
         hosts: 
-        - host: ombi.${dns_suffix:=absolutist.it}
+        - host: ombi.absolutist.it
           paths:
             - path: "/"
               pathType: "Prefix"
-        - host: ombi.${dns_suffix2:=wahoo.li}
+        - host: ombi.wahoo.li
           paths:
             - path: "/"
               pathType: "Prefix"
