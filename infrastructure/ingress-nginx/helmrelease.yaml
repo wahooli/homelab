@@ -29,7 +29,7 @@ spec:
         enabled: true
         timeoutSeconds: 30
       dnsPolicy: ClusterFirstWithHostNet
-      replicaCount: ${agent_count}
+      replicaCount: 2
       ingressClassResource:
         name: nginx
         enabled: true
