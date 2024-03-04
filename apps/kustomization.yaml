@@ -4,5 +4,3 @@ resources:
 - db
 - authentik.yaml
 - default
-- iot
-- ext

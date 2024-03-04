@@ -4,11 +4,11 @@ resources:
 - sources
 - cert-manager.yaml
 - cert-manager-issuers.yaml
-- csi-external-snapshotter
+# - csi-external-snapshotter
 - longhorn.yaml
 - ingress-nginx.yaml
-- external-dns
+# - external-dns
 - longhorn-data-restore.yaml
 - cloudflare-tunnel.yaml
-- multus.yaml
-- multus-interfaces.yaml
+# - multus.yaml
+# - multus-interfaces.yaml
