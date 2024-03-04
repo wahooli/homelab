@@ -14,14 +14,14 @@ spec:
         name: bitnami
         namespace: flux-system
       # version: ">=10.1.1 <10.6.0"
-      version: 16.4.0
+      version: 15.2.2
   interval: 1h0m0s
   install:
     remediation:
       retries: -1
   values:
     image:
-      tag: 11.2.3-debian-12-r4
+      tag: 11.2.2-debian-11-r6
     architecture: standalone
     auth:
       replicationUser: replicator
