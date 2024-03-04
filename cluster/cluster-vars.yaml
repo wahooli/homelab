@@ -8,4 +8,4 @@ stringData:
   dns_suffix: "absolutist.it"
   dns_suffix2: "wahoo.li"
   cluster_issuer: "letsencrypt-production"
-  agent_count: "1"
+  agent_count: "2"

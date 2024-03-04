@@ -5,5 +5,5 @@ metadata:
 resources:
 - namespace.yaml
 - certificate.yaml
-# - helmrelease.yaml
+- helmrelease.yaml
 # - volumesnapshotclass.yaml
