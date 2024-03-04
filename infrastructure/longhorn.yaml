@@ -7,8 +7,6 @@ spec:
   dependsOn:
   - name: ingress-nginx
   - name: cert-manager-issuers
-  - name: external-snapshotter-crd
-  - name: external-snapshotter-controller
   interval: 15m
   retryInterval: 2m0s
   path: "./infrastructure/longhorn"
