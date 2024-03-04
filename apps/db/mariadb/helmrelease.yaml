@@ -13,14 +13,15 @@ spec:
         kind: HelmRepository
         name: bitnami
         namespace: flux-system
-      version: ">=10.1.1 <10.6.0"
+      # version: ">=10.1.1 <10.6.0"
+      version: 16.4.0
   interval: 1h0m0s
   install:
     remediation:
       retries: -1
   values:
     image:
-      tag: 10.5.13-debian-10-r32
+      tag: 11.2.3-debian-12-r4
     architecture: standalone
     auth:
       replicationUser: replicator
