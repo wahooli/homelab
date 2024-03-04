@@ -20,6 +20,7 @@ spec:
   releaseName: longhorn
   targetNamespace: longhorn-system
   values:
+    enablePSP: false
     defaultSettings:
       backupTarget: s3://longhorn-backups@nasse/
       backupTargetCredentialSecret: minio-secret
