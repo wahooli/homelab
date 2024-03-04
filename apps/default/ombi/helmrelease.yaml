@@ -20,6 +20,16 @@ spec:
     remediation:
       retries: -1
   values:
+    initContainers:
+      copy-configuration: 
+        image: bash:5.1.12
+        imagePullPolicy: IfNotPresent
+        command: ['bash', '-c', 'find /src/ -type l ! -name "*..data" -maxdepth 1 | while read -r file; do install -D -m 664 $(readlink -f $file) /dest${file#/src}; done; find /dest -type f -maxdepth 1 -name "*.sh" -exec chmod +x {} \; ; echo copied'] # heccin oneliner
+        volumeMounts:
+        - name: config
+          mountPath: /dest
+        - name: configyaml
+          mountPath: /src
     image:
       repository: linuxserver/ombi
       tag: 4.22.5
@@ -27,12 +37,18 @@ spec:
     env:
       TZ: Europe/Helsinki
     persistence:
-      config:
+      configyaml:
         enabled: true
-        type: configMap
-        name: ombi-database-json
-        mountpath: /config/database.json
-        readOnly: false
+        type: custom
+        volumeSpec:
+          configMap:
+            name: ombi-database-json
+      config:
+        enabled: false
+        # type: configMap
+        # name: ombi-database-json
+        # mountpath: /config/database.json
+        # readOnly: false
     ingress:
       main:
         enabled: true
