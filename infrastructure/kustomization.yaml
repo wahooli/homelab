@@ -8,7 +8,7 @@ resources:
 - longhorn.yaml
 - ingress-nginx.yaml
 # - external-dns
-- longhorn-data-restore.yaml
+# - longhorn-data-restore.yaml
 - cloudflare-tunnel.yaml
 # - multus.yaml
 # - multus-interfaces.yaml
